@@ -12,16 +12,19 @@ Usage:
 ```php
 CakePlugin::load('Crud');
 ```
+* Copy and rename model_User.php.sample to app/Config/model_User.php
 * Extend the desired controller as below
 
 ```php
 App::uses('CrudController', 'Crud.Controller');
 
-class TextCodesController extends CrudController {
+class UsersController extends CrudController {
 }
 ```
-* Navigate to http://localhost/text_codes/index
+* Navigate to http://localhost/users/index
 
-This will allow the CRUD operations on text_codes table/collection in your database.
+This will allow the CRUD operations on users table/collection in your database.
+You can choose desired controller and simply extend it as above and create a corresponding Config file.
+
 Tested with MongoDB.
 
