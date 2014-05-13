@@ -8,9 +8,16 @@
 </div>
 
 <?= $this->Form->create(); ?>
-    <?foreach($fields as $field => $fieldoptions): ?>
-        <?= $this->Form->input($field,$fieldoptions);?>
-    <? endforeach ?>
+    <?
+        foreach($fields as $field => $fieldoptions) {
+            if(is_array($fieldoptions)) {
+                echo $this->Form->input($field, $fieldoptions);
+            }
+            else {
+                echo $this->Form->input($field, array('label' => $fieldoptions));
+            }
+        } 
+    ?>
     <?= $this->Form->submit('Save') ?>
 <?= $this->Form->end() ?>
  
